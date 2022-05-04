@@ -1,56 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>page 1</title>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">  
+    <title>Todo List </title>
     <link rel="stylesheet" href="style1.css">
-</head>
-<body>
-    <div class="container">
-        <div id="newtask">
-            <input type="text"placeholder="Agregar Tareas">
-            <button id="push">Add</button>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="task-input">
+        <img src="bars-icon.svg" alt="icon">
+        <input type="text" placeholder="Agregar Tareas">
+      </div>
+      <div class="controls">
+        <div class="filters">
+          <span class="active" id="all">Tareas</span>
+          <span id="pending">Pendiente</span>
+          <span id="completed">Completados</span>
         </div>
-        <div id="tasks"></div>
+        <button class="clear-btn">Borrar Todo</button>
+      </div>
+      <ul class="task-box"></ul>
     </div>
-    <script>
 
-        document.querySelector('#push').onclick = function(){
-        
-            if(document.querySelector('#newtask input'). value.length==0)
-            {
-                alert("Agregar tarea")
-            }
-            else{
-                document.querySelector(`#task`).innerHTML
-                += `<div class="task">
-                    <span id="taskname">
-                    ${document.querySelector(`#newtask input`).
-                    value}
-                    </span>
-                     <button class="delete">X</button> 
-                     </div>
-                     `;
+    <script src="script.js"></script>
 
-                     var current_taks = document.
-                     querySelectorAll('.delete');
-                     for(var i=0;i <current_taks.length;i++){
-                         current_taks[i].onclick=function(){
-                             this.parentNode.remove();
-                         }
-                     }
-                     var taks = document.querySelectorAll('#taskname');
-                     for(var i=0;i <taks.length;i++){
-                         taks[i].onclick=function(){
-                             this.classList.toggle('completo');
-    }
-        }
-     
-            }
-        }
-    </script>
-
-</body>
+  </body>
 </html>
